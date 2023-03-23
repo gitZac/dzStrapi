@@ -1,12 +1,20 @@
 <template>
   <div>
     <NuxtLayout />
-    <h1>Hello world</h1>
-    {{pageData}}
+    <div class="container">
+      <h1>Hello world</h1>
+      {{pageData}}
+    </div>
   </div>
 </template>
 <script setup>
 /*
+
+TODO
+
+- swap localhost out for .env
+- refactor lib? 
+
 Who its for: 
 - Portfolio site
   0 For recruiters, other developers, hiring managers
@@ -30,8 +38,8 @@ Data:
 - Git Repo API on about section
 */
 
-import getPageData from '~/lib/getStrapiPageData.js'
+import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
 let pageData = ref([])
-pageData.value = await getPageData();
+pageData.value = await getSinglePageData('home');
 </script>
 
