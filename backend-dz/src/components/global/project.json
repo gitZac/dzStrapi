@@ -1,22 +1,22 @@
 {
   "collectionName": "components_global_projects",
   "info": {
-    "displayName": "Project",
+    "displayName": "projects",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "sectionTitle": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
+    "sectionIntro": {
+      "type": "string"
     },
-    "projectCards": {
-      "displayName": "Title Text Image",
+    "cards": {
+      "displayName": "projectCard",
       "type": "component",
       "repeatable": true,
-      "component": "containment.title-text-image"
+      "component": "cards.project-card"
     }
   }
 }

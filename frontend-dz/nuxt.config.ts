@@ -5,8 +5,15 @@ export default defineNuxtConfig({
       transpile: ['vuetify'],
     },
     vite: {
-      define: {
-        'process.env.DEBUG': false,
+      css: {
+        preprocessorOptions: {
+          scss: {
+              additionalData: `
+              @import "@/assets/styles/variables.scss";
+              @import "@/node_modules/bulma/bulma.sass";
+              `,
+          },
       },
-    }, 
+      }
+    }
 })

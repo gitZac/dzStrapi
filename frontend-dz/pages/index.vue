@@ -1,10 +1,9 @@
 <template>
   <div>
     <NuxtLayout />
-    <div class="container">
-      <h1>Hello world</h1>
-      {{pageData}}
-    </div>
+      <h1 class="is-primary">Hello world</h1>
+      <a class="button is-primary" href="">push me</a>
+    <NuxtLayout name="footer" />
   </div>
 </template>
 <script setup>
@@ -26,6 +25,7 @@ Who its for:
 - About
 - Projects
   0 Side projects and Work projects
+  0 REpos -- pull from github?
 - Resume, maybe
 - Cool stuff?
   0 Not necessarily past projects, but stuff you want to build
@@ -43,3 +43,6 @@ let pageData = ref([])
 pageData.value = await getSinglePageData('home');
 </script>
 
+<style lang="scss">
+
+</style>

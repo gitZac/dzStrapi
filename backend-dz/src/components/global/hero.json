@@ -1,14 +1,29 @@
 {
   "collectionName": "components_global_heroes",
   "info": {
-    "displayName": "Hero"
+    "displayName": "Hero",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "Image": {
+    "mainIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subtext": {
+      "type": "text"
+    },
+    "social": {
       "allowedTypes": [
         "images",
         "files",
@@ -16,13 +31,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
-    },
-    "ctaText": {
-      "type": "string"
-    },
-    "ctaLink": {
-      "type": "string"
+      "multiple": true
     }
   }
 }

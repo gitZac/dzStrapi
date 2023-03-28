@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_cards_project_cards",
+  "info": {
+    "displayName": "projectCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "projectTitle": {
+      "type": "string"
+    },
+    "projectShortDescription": {
+      "type": "string"
+    },
+    "projectIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectCtaText": {
+      "type": "string"
+    },
+    "projectPageContent": {
+      "type": "richtext"
+    }
+  }
+}

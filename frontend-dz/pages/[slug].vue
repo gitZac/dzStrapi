@@ -2,8 +2,6 @@
 <div>
   <NuxtLayout />
   <h1>hellow from {{$route.params.slug}}</h1>
-  {{data.components}}
-  <v-btn>click me</v-btn>
 </div>
 
 </template>
