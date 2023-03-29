@@ -1,8 +1,8 @@
 <template>
   <div>
     <NuxtLayout />
-      <h1 class="is-primary">Hello world</h1>
-      <a class="button is-primary" href="">push me</a>
+        <h1 class="is-primary">Hello world</h1>
+        <a class="button is-primary" href="">push me</a>
     <NuxtLayout name="footer" />
   </div>
 </template>
