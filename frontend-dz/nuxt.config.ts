@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-coznfig
 export default defineNuxtConfig({
-    css: ['vuetify/lib/styles/main.sass', '~/assets/styles/main.scss'],
+    css: ['vuetify/lib/styles/main.sass', '~/assets/styles/main.scss', '@fortawesome/fontawesome-svg-core/styles.css'],
     build: {
       transpile: ['vuetify'],
     },
@@ -13,7 +13,7 @@ export default defineNuxtConfig({
               @import "@/node_modules/bulma/bulma.sass";
               `,
           },
-      },
+        },
       }
     }
 })

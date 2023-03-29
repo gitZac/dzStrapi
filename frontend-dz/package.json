@@ -8,9 +8,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@mdi/font": "^7.2.96",
     "nuxt": "^3.2.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "bootstrap": "^5.2.3",
     "bulma": "^0.9.4",
     "ohmyfetch": "^0.4.21",

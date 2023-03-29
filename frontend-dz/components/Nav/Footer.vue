@@ -1,16 +1,27 @@
 <template>
-<footer class="footer">
-    <nav class="footer__navbar" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="footer__navbar-menu" :class="menuIsActive ? 'is-active' :  '' ">
-                <a class="footer__navbar-item" v-for="item in menuData.items.data" :key="item" :href="item.attributes.url">
-                    {{item.attributes.title}}
-                </a>
+    <footer class="footer">
+        <nav class="footer__navbar" role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="footer__navbar-menu" :class="menuIsActive ? 'is-active' :  '' ">
+                    <a class="footer__navbar-item" v-for="item in menuData.items.data" :key="item" :href="item.attributes.url">
+                        {{item.attributes.title}}
+                    </a>
+                </div>
+                <div class="footer__navbar-menu--social" :class="menuIsActive ? 'is-active' :  '' ">
+                    <a href="https://github.com/gitZac" target="_blank" class="footer__social-icon">
+                        <span class="icon">
+                            <v-icon icon="mdi-github" size="2rem"/>
+                        </span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/zac-taylor-068875119/" target="_blank" class="footer__social-icon">
+                        <span class="icon">
+                            <v-icon icon="mdi-linkedin"  size="2rem"/>
+                        </span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </nav>
-</footer>
-
+        </nav>
+    </footer>
 </template>
 
 <script>
@@ -48,22 +59,50 @@ export default {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            @include from(1250px){
+            @include from($xl){
                 display: flex;
                 justify-content: space-evenly;
                 flex-direction: row;
             }
         }
 
-        &__navbar-item{
+        &__navbar-menu--social{
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            padding-top: 5rem;
+        }
+
+        &__navbar-item {
             text-align: center;
             color: $white;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 1rem 6rem;
+            padding: .5rem 5rem;
             transition: all 0.2s;
             background-color: rgba(255, 255, 255, 0.05);
             margin-bottom: 2rem;
+            &:hover{
+                background-color:rgba(255, 255, 255, 0.05);
+                color: $white;
+                transform: translateY(-3px);
+                border-bottom: transparent;
+            }
+
+            @include from($xl){
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: row;
+                margin-bottom: 0;
+            }
+
+        }
+        &__social-icon {
+            color:$white;
+            
+            span{
+                margin: 0 1rem
+            }
         }
     }
 </style>
