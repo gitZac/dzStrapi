@@ -10,14 +10,19 @@
                 <div class="footer__navbar-menu--social" :class="menuIsActive ? 'is-active' :  '' ">
                     <a href="https://github.com/gitZac" target="_blank" class="footer__social-icon">
                         <span class="icon">
-                            <v-icon icon="mdi-github" size="2rem"/>
+                            <v-icon icon="mdi-github" size="36px"/>
                         </span>
+                        Github
                     </a>
                     <a href="https://www.linkedin.com/in/zac-taylor-068875119/" target="_blank" class="footer__social-icon">
                         <span class="icon">
-                            <v-icon icon="mdi-linkedin"  size="2rem"/>
+                            <v-icon icon="mdi-linkedin" size="36px"/>
                         </span>
+                        linkedin
                     </a>
+                </div>
+                <div class="footer__copyright has-text-centered">
+                    <p>	&#169; copyright digitalZac.com</p>
                 </div>
             </div>
         </nav>
@@ -31,16 +36,6 @@ export default {
         menuData: {
             type: Object,
             default: []
-        }
-    },
-    data(){
-        return{
-            menuIsActive: false
-        }
-    },
-    methods: {
-        toggleMenu(){
-            this.menuIsActive = !this.menuIsActive
         }
     }
 }
@@ -70,7 +65,7 @@ export default {
             justify-content: center;
             flex-direction: row;
             display: flex;
-            padding-top: 5rem;
+            padding-top: 3rem;
         }
 
         &__navbar-item {
@@ -99,10 +94,15 @@ export default {
         }
         &__social-icon {
             color:$white;
-            
-            span{
-                margin: 0 1rem
+            margin: 0 1rem;
+
+            &:hover{
+                color: $link;
             }
+        }
+
+        &__copyright{
+            padding-top:2rem;
         }
     }
 </style>
