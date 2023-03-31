@@ -1,7 +1,7 @@
 {
   "collectionName": "components_global_heroes",
   "info": {
-    "displayName": "Hero",
+    "displayName": "mainHero",
     "description": ""
   },
   "options": {},
@@ -23,15 +23,11 @@
     "subtext": {
       "type": "text"
     },
-    "social": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "Buttons": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": true,
+      "component": "utility.button"
     }
   }
 }

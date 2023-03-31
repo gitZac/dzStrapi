@@ -4,6 +4,12 @@
      url('./../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: "Merriweather";
+    src: local("Merriweather"),
+    url('./../fonts/Merriweather-Regular.ttf') format('truetype');
+}
+
 html, body{
     font-family:'Raleway', sans-serif !important;
 }

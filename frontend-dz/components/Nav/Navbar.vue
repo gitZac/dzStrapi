@@ -11,7 +11,6 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-
             <div class="navbar-menu" :class="menuIsActive ? 'is-active' :  '' ">
                 <div class="navbar-start">
                     <a class="navbar-item" v-for="item in menuData.items.data" :key="item" :href="item.attributes.url">

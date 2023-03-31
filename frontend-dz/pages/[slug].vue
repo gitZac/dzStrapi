@@ -1,7 +1,8 @@
 <template>
 <div>
   <NuxtLayout />
-  <h1>hellow from {{$route.params.slug}}</h1>
+    <h1>hellow from {{$route.params.slug}}</h1>
+  <NuxtLayout name="footer" />
 </div>
 
 </template>

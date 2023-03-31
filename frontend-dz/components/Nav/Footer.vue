@@ -2,12 +2,12 @@
     <footer class="footer">
         <nav class="footer__navbar" role="navigation" aria-label="main navigation">
             <div class="container">
-                <div class="footer__navbar-menu" :class="menuIsActive ? 'is-active' :  '' ">
+                <div class="footer__navbar-menu">
                     <a class="footer__navbar-item" v-for="item in menuData.items.data" :key="item" :href="item.attributes.url">
                         {{item.attributes.title}}
                     </a>
                 </div>
-                <div class="footer__navbar-menu--social" :class="menuIsActive ? 'is-active' :  '' ">
+                <div class="footer__navbar-menu--social">
                     <a href="https://github.com/gitZac" target="_blank" class="footer__social-icon">
                         <span class="icon">
                             <v-icon icon="mdi-github" size="36px"/>

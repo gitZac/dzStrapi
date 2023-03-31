@@ -1,8 +1,7 @@
 <template>
   <div>
     <NuxtLayout />
-        <h1 class="is-primary">Hello world</h1>
-        <a class="button is-primary" href="">push me</a>
+      <MainHero />
     <NuxtLayout name="footer" />
   </div>
 </template>
@@ -41,6 +40,7 @@ Data:
 import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
 let pageData = ref([])
 pageData.value = await getSinglePageData('home');
+let components = pageData.value.page.components;
 </script>
 
 <style lang="scss">

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_utility_buttons",
+  "info": {
+    "displayName": "button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttonText": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "enumeration",
+      "enum": [
+        "code-braces",
+        "email-box",
+        "linkedin",
+        "github",
+        "facebook",
+        "twitter"
+      ],
+      "required": false
+    },
+    "buttonSize": {
+      "type": "enumeration",
+      "enum": [
+        "medium",
+        "small",
+        "large"
+      ]
+    },
+    "buttonColor": {
+      "type": "enumeration",
+      "enum": [
+        "link",
+        "primary"
+      ]
+    }
+  }
+}
