@@ -6,24 +6,11 @@
         </h1>
         <p class="main-hero__text">{{componentData.description}}</p>
         <div class="main-hero__buttons">
-            <button 
-                v-for="(button, index) in componentData.buttons" 
-                :key="index" 
-                class="button"
-                :class="[
-                    {
-                        'is-outlined': button.isOutlined,
-                    },
-                    button.buttonColor ? 'is-' + button.buttonColor : '',
-                    button.buttonSize ? 'is-' + button.buttonSize : ''
-                ]"
-                >
-                <v-icon 
-                class="main-hero__icon" 
-                :icon="'mdi-' + button.Icon" 
-                size="24px"/>
-                {{button.buttonText}}
-            </button>
+            <UtilityButton 
+                v-for="(button, index) in componentData.buttons"
+                :key="index"
+                :buttonProps="button"
+            />
         </div>
     </div>
   </section>
@@ -73,10 +60,6 @@ name: 'MainHero',
             button{
                 margin-right: 2rem;
             }
-        }
-
-        &__icon{
-            margin-right: 5px;
         }
     }
 </style>

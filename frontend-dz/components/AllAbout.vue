@@ -5,7 +5,6 @@
         <div class="columns">
             <div class="all-about__list-items column">
                 <li v-for="(item, index) in componentData.listItem" :key="index" class="all-about__list-item">
-
                     <h3 class="all-about__list-item-title">{{item.title}}</h3>
                     <p>{{item.description}}</p>
                 </li>
@@ -14,27 +13,15 @@
                 <img :src="'http://localhost:1337' + componentData.image.data.attributes.url" alt="">
             </div>
         </div>
+        <div class="all-about__cta-buttons">
+            <UtilityButton 
+                v-for="(button, index) in componentData.ctaButtons"
+                :key="index"
+                :buttonProps="button"
+            />
+        </div>
     </div>
-    <div class="all-about__cta-buttons">
-        <button 
-            v-for="(button, index) in componentData.ctaButtons" 
-            :key="index" 
-            class="button"
-            :class="[
-                {
-                    'is-outlined': button.isOutlined,
-                },
-                button.buttonColor ? 'is-' + button.buttonColor : '',
-                button.buttonSize ? 'is-' + button.buttonSize : ''
-            ]"
-            >
-            <v-icon 
-            class="main-hero__icon" 
-            :icon="'mdi-' + button.Icon" 
-            size="24px"/>
-            {{button.buttonText}}
-        </button>
-    </div>
+
   </section>
 </template>
 
