@@ -1,7 +1,7 @@
 <template>
   <section class="hero main-hero">
     <div class="container">
-        <h1 class="main-hero__title title is-1">
+        <h1 class="main-hero__title">
             {{componentData.title}}
         </h1>
         <p class="main-hero__text">{{componentData.description}}</p>
@@ -44,8 +44,12 @@ name: 'MainHero',
     .main-hero{
         padding: 5rem 0;
         text-align: center;
-        &__title, input{
+        @include from($md){
+            padding: 5rem 0;
+        }
+        &__title {
             font-family: $font-secondary;
+            font-weight: bold;
         }
         &__text{
             font-size: 1.5rem;

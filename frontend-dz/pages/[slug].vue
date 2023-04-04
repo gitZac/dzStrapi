@@ -11,7 +11,7 @@
 import getSinglePageData from '~/lib/getStrapiSinglePageData'
 const route = useRoute()
 const { data } = await useAsyncData(
-() => {
+  () => {
     return getSinglePageData(route.params.slug)
   },
   {

@@ -20,7 +20,8 @@
         "linkedin",
         "github",
         "facebook",
-        "twitter"
+        "twitter",
+        "arrow-down-thin"
       ],
       "required": false
     },

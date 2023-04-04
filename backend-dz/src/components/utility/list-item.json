@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_utility_list_items",
+  "info": {
+    "displayName": "listItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "code-braces",
+        "email-box",
+        "linkedin",
+        "github",
+        "facebook",
+        "twitter"
+      ]
+    }
+  }
+}

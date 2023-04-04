@@ -22,17 +22,16 @@ export default {
         let components = ref([]);
         components = props.componentData.map( (component) => {
         const componentName = component.componentId;
-        const {...data} = component;
+        const { ...data } = component;
             return{
-                data: data,
-                component: defineAsyncComponent(() => {
-                return import (`../components/${componentName}.vue`)
+                    data: data,
+                    component: defineAsyncComponent(() => {
+                    return import (`../components/${componentName}.vue`)
                 })
             }
         })
 
         return { components }
-
     }
 }
 </script>

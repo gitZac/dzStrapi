@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "global.project",
-        "global.main-hero"
+        "global.main-hero",
+        "global.all-about"
       ]
     },
     "pageTitle": {

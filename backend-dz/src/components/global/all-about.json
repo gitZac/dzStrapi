@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_global_all_abouts",
+  "info": {
+    "displayName": "AllAbout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ctaButtons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utility.button"
+    },
+    "listItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utility.list-item"
+    },
+    "componentId": {
+      "type": "string"
+    }
+  }
+}

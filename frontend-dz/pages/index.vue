@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <main class="entry-content">
     <NuxtLayout />
       <DynamicRenderer 
         :componentData="strapiComponentData"
       />
     <NuxtLayout name="footer" />
-  </div>
+  </main>
 </template>
 <script setup>
 import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
