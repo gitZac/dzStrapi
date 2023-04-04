@@ -1,6 +1,6 @@
 export default async function getSinglePageData(slug){
     try{
-        const page = await fetch(`http://localhost:1337/api/pages?filters\[slug\][$eq]=${slug}&populate=*`, {
+        const page = await fetch(`http://localhost:1337/api/pages?filters\[slug\][$eq]=${slug}&populate=deep,10`, {
             headers: {
                 Accept: 'application/json'
             }

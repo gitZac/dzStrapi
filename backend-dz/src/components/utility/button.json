@@ -38,6 +38,10 @@
         "link",
         "primary"
       ]
+    },
+    "isOutlined": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

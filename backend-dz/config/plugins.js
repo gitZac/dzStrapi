@@ -14,4 +14,9 @@ module.exports = {
       },
     },
   },
+  'strapi-plugin-populate-deep': {
+    config: {
+      defaultDepth: 20, // Default is 5
+    }
+  },
 };

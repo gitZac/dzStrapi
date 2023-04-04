@@ -2,38 +2,41 @@
   <section class="hero main-hero">
     <div class="container">
         <h1 class="main-hero__title title is-1">
-            Hi I'm Zac.
+            {{componentData.title}}
         </h1>
-        <p class="main-hero__text">I am a software developer based in Louisville KY, currently working for a company called Atria Senior Living.</p>
-        <div v-if="name !== ''">
-            <p>Send an email to Zac that says:</p>
-            <p>Hello Zac, my name is {{name}}. I am a {{job}} for {{company}}. We are based in {{city}}.</p>
-            <div>
-                I'm really impressed with your expertise in 
-                    <div class="select">
-                         <select >
-                                <option>Select dropdown</option>
-                                <option>With options</option>
-                         </select>
-                    </div>
-                    
-            .</div>
-        </div>
+        <p class="main-hero__text">{{componentData.description}}</p>
         <div class="main-hero__buttons">
-            <button class="button is-primary is-medium"> <v-icon class="main-hero__icon" icon="mdi-code-braces" size="24px"/>Projects</button>
-            <button class="button is-outlined is-link is-medium"> <v-icon class="main-hero__icon" icon="mdi-email-box" size="24px"/>Get in Touch</button>
+            <button 
+                v-for="(button, index) in componentData.buttons" 
+                :key="index" 
+                class="button"
+                :class="[
+                    {
+                        'is-outlined': button.isOutlined,
+                    },
+                    button.buttonColor ? 'is-' + button.buttonColor : '',
+                    button.buttonSize ? 'is-' + button.buttonSize : ''
+                ]"
+                >
+                <v-icon 
+                class="main-hero__icon" 
+                :icon="'mdi-' + button.Icon" 
+                size="24px"/>
+                {{button.buttonText}}
+            </button>
         </div>
     </div>
   </section>
-</template>
 
+</template>
 <script>
 export default {
-    data(){
-        return{
-            name: '',
-        }
+name: 'MainHero',
+  props: {
+    componentData: {
+      type: Object,
     }
+  }
 }
 </script>
 

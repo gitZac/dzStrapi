@@ -1,13 +1,18 @@
 <template>
   <div>
     <NuxtLayout />
-      <MainHero />
+      <DynamicRenderer 
+        :componentData="strapiComponentData"
+      />
     <NuxtLayout name="footer" />
   </div>
 </template>
 <script setup>
-/*
+import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
+let pageData = await getSinglePageData('home');
+let strapiComponentData = pageData.page.components; //component data we get from strapi.
 
+/*
 TODO
 
 - swap localhost out for .env
@@ -37,10 +42,6 @@ Data:
 - Git Repo API on about section
 */
 
-import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
-let pageData = ref([])
-pageData.value = await getSinglePageData('home');
-let components = pageData.value.page.components;
 </script>
 
 <style lang="scss">
