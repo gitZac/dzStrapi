@@ -29,7 +29,7 @@ name: 'MainHero',
 
 <style lang="scss" scoped>
     .main-hero{
-        padding: 5rem 0;
+        padding: 2.5rem 0;
         text-align: center;
         @include from($md){
             padding: 5rem 0;
@@ -49,7 +49,6 @@ name: 'MainHero',
         &__inputs{
             max-width: 10rem;
         }
-
         &__buttons{
             display: flex;
             flex-direction: row;
