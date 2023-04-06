@@ -4,6 +4,11 @@ export default defineNuxtConfig({
     build: {
       transpile: ['vuetify'],
     },
+   runtimeConfig: {
+    public: {
+      STRAPI_API_BASE: process.env.STRAPI_API_BASE,
+    }
+    },  
     vite: {
       css: {
         preprocessorOptions: {
@@ -15,5 +20,5 @@ export default defineNuxtConfig({
           },
         },
       }
-    }
+    },
 })

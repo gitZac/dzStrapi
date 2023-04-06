@@ -1,6 +1,8 @@
 export default async function getMenuData(menuId){
+    const config  = useRuntimeConfig();
+
     try{
-        const menu = await fetch(`${process.env.API_BASE}/api/menus/${menuId}?populate=*`, {
+        const menu = await fetch(`${config.public.STRAPI_API_BASE}/api/menus/${menuId}?populate=*`, {
             headers: {
                 Accept: 'application/json'
             }

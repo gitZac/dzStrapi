@@ -1,6 +1,7 @@
 export default async function getSinglePageData(slug){
+    const config  = useRuntimeConfig();
     try{
-        const page = await fetch(`${process.env.API_BASE}/api/pages?filters\[slug\][$eq]=${slug}&populate=deep,10`, {
+        const page = await fetch(`${config.public.STRAPI_API_BASE}/api/pages?filters\[slug\][$eq]=${slug}&populate=deep,10`, {
             headers: {
                 Accept: 'application/json'
             }
