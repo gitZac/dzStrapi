@@ -1,6 +1,6 @@
 export default async function getMenuData(menuId){
     try{
-        const menu = await fetch(`http://localhost:1337/api/menus/${menuId}?populate=*`, {
+        const menu = await fetch(`${process.env.API_BASE}/api/menus/${menuId}?populate=*`, {
             headers: {
                 Accept: 'application/json'
             }
