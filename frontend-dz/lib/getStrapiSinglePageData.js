@@ -1,15 +1,19 @@
-export default async function getSinglePageData(slug){
+export default async function getSinglePageData(slug, collection){
     const config  = useRuntimeConfig();
+    let filters = `?filters\[slug\][$eq]=${slug}&populate=deep,10`;
+
     try{
-        const page = await fetch(`${config.public.STRAPI_API_BASE}/api/pages?filters\[slug\][$eq]=${slug}&populate=deep,10`, {
+        const url = `${config.public.STRAPI_API_BASE}/${collection}` + filters;
+        const request = await fetch( url , {
             headers: {
                 Accept: 'application/json'
             }
         })
         .then((res) => res.json())
-        .then((data) => data)
+        .then((data) => data);
+        console.log(request);
         return{
-            page: page.data[0].attributes,
+            data: request.data[0].attributes,
         }
     }
     catch(error){

@@ -9,6 +9,8 @@
 </template>
 <script setup>
 import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
-let pageData = await getSinglePageData('home');
-let strapiComponentData = pageData.page.components; //component data we get from strapi.
+const slug = 'home';
+const strapiCollection = 'pages';
+let pageData = await getSinglePageData(slug, strapiCollection);
+let strapiComponentData = pageData.data.components; //component data we get from strapi.
 </script>

@@ -1,23 +1,25 @@
 <template>
-<div>
-  <NuxtLayout />
-    <h1>hellow from {{$route.params.slug}}</h1>
-  <NuxtLayout name="footer" />
-</div>
-
+  <main class="entry-content">
+    <NuxtLayout />
+        <DynamicRenderer 
+          :componentData="data.components"
+        />
+    <NuxtLayout name="footer" />
+  </main>
 </template>
 
 <script setup>
 import getSinglePageData from '~/lib/getStrapiSinglePageData'
 const route = useRoute()
+const strapiCollection = 'pages';
 const { data } = await useAsyncData(
   () => {
-    return getSinglePageData(route.params.slug)
+    return getSinglePageData(route.params.slug, strapiCollection)
   },
   {
-    transform(data){
+    transform(pageData){
       return{
-        components: data.page.components
+        components: pageData.data.components
       }
     }
   }
