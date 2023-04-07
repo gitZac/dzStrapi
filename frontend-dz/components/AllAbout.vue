@@ -28,16 +28,22 @@
             />
         </div>
     </div>
+    {{githubProfileData}}
   </section>
 </template>
 
 <script>
+import getGithubUserData from '~/lib/getGithubData.js'
 export default {
     name: 'AllAbout',
     props: {
         componentData: {
             type: Object,
         }
+    },
+    async setup(){
+        let githubProfileData = await getGithubUserData()
+        return { githubProfileData }
     }
 }
 </script>

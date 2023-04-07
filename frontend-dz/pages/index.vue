@@ -9,6 +9,7 @@
 </template>
 <script setup>
 import getSinglePageData from '~/lib/getStrapiSinglePageData.js'
+
 const slug = 'home';
 const strapiCollection = 'pages';
 let pageData = await getSinglePageData(slug, strapiCollection);

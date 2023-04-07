@@ -11,7 +11,6 @@ export default async function getSinglePageData(slug, collection){
         })
         .then((res) => res.json())
         .then((data) => data);
-        console.log(request);
         return{
             data: request.data[0].attributes,
         }
