@@ -42,12 +42,12 @@ export default {
 </script>
 <style scoped lang="scss">
     .footer{
-        background-color: $gray;
+        background-color: $dark-bg;
         color: $white;
         padding: 3rem 1.5rem 3rem;
 
         &__navbar{
-            background-color: $gray;
+            background-color: $dark-bg;
         }
 
         &__navbar-menu {

@@ -12,12 +12,48 @@
                     />
                     <div class="list-item__content">
                         <h3 class="all-about__list-item-title">{{item.title}}</h3>
-                        <p>{{item.description}}</p>
+                        <p class="all-about__list-item-description">{{item.description}}</p>
                     </div>
                 </li>
             </div>
             <div class="all-about__image column">
-                <img :src="'http://localhost:1337' + componentData.image.data.attributes.url" alt="">
+                <img :src="githubProfile.data.avatar_url" alt="">
+                <div class="all-about__github-content">
+                    <h3 class="all-about__github-name">{{githubProfile.data.name}}</h3>
+                    <h4 class="all-about__github-user">{{githubProfile.data.login}}</h4>
+                    <p class="all-about__github-bio">{{githubProfile.data.bio}}</p>
+                    <UtilityButton
+                        class="all-about__github-button"
+                        :buttonProps="{
+                            isOutlined:true,
+                            buttonText: 'View on Github',
+                            link: 'https://github.com/gitZac?tab=repositories'
+                        }"
+                    />
+                    <ul class="all-about__github-info-list">
+                        <li class="all-about__github-info-list-item">
+                            <v-icon
+                            icon='mdi-domain'
+                            size="16px"
+                            />
+                            {{githubProfile.data.company}}
+                        </li>
+                        <li class="all-about__github-info-list-item">
+                            <v-icon
+                            icon='mdi-map-marker'
+                            size="16px"
+                            />
+                            {{githubProfile.data.location}}
+                        </li>
+                        <li class="all-about__github-info-list-item">
+                            <v-icon
+                            icon='mdi-email'
+                            size="16px"
+                            />
+                            ztaylor555@gmail.com
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="all-about__cta-buttons">
@@ -28,7 +64,6 @@
             />
         </div>
     </div>
-    {{githubProfileData}}
   </section>
 </template>
 
@@ -42,8 +77,8 @@ export default {
         }
     },
     async setup(){
-        let githubProfileData = await getGithubUserData()
-        return { githubProfileData }
+        let githubProfile = await getGithubUserData()
+        return { githubProfile }
     }
 }
 </script>
@@ -55,12 +90,19 @@ export default {
             flex-direction: row;
             padding-bottom: 2rem;
         }
+
         &__list-items{
             list-style: none;
         }
+
         &__list-item-title{
             font-size: 1.5rem;
         }
+
+        &__list-item-description{
+            max-width: 85%;
+        }
+        
         &__icon{
             background: $primary;
             color: $white;
@@ -74,8 +116,7 @@ export default {
 
         &__image{
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             img{
                 border-radius: 50%;
                 max-width: 300px;
@@ -88,6 +129,28 @@ export default {
             flex-direction: row;
             align-items: center;
             justify-content: center;
+        }
+
+        &__github-name{
+            font-size: 25px;
+            font-family: $font-primary;
+            font-weight: bold;
+        }
+
+        &__github-user{
+            font-size: 20px;
+            font-family: $font-primary;
+            color: $gray-dark;
+        }
+
+        &__github-button{
+            display: block;
+            background-color: $gray-light;
+            width: 70%;
+            margin: 1rem 0;
+            a{
+                font-family: $font-primary;
+            }
         }
 
         .columns--adjust{
@@ -103,6 +166,12 @@ export default {
         .section-title{
             text-align: center;
             padding-bottom:3rem;
+        }
+
+        &__github-info-list{
+            li{
+                padding-bottom: .5rem;
+            }
         }
     }
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <button 
+  <button
+    window.location.href="https://google.com"
     class="dz-button button" 
     :class="[
     {
@@ -9,11 +10,14 @@
     buttonProps.buttonSize ? 'is-' + buttonProps.buttonSize : ''
     ]" 
     >
-    <v-icon
-    class="dz-button__icon"
-    :icon="'mdi-' + buttonProps.Icon" 
-    size="24px"/>
-    {{buttonProps.buttonText}}
+    <a class="dz-button__link" :href="buttonProps.link">
+        <v-icon
+        v-if="buttonProps.Icon"
+        class="dz-button__icon"
+        :icon="'mdi-' + buttonProps.Icon" 
+        size="24px"/>
+        {{buttonProps.buttonText}}
+    </a>
   </button>
 </template>
 
@@ -32,6 +36,9 @@ export default {
 .dz-button{
     &__icon{
         margin-right: 5px;
+    }
+    &__link{
+        color: inherit !important;
     }
 }
 </style>
