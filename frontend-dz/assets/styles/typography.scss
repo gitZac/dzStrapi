@@ -1,38 +1,56 @@
 @font-face {
-    font-family: "Raleway";
-    src: local("Raleway"),
-     url('./../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-family: "Raleway";
+  src: local("Raleway"),
+    url("./../fonts/Raleway-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Merriweather";
-    src: local("Merriweather"),
-    url('./../fonts/Merriweather-Regular.ttf') format('truetype');
+  font-family: "Merriweather";
+  src: local("Merriweather"),
+    url("./../fonts/Merriweather-Regular.ttf") format("truetype");
 }
 
-html, body{
-    font-family:$font-primary !important;
-    // font-size: 10px !important;
+html,
+body {
+  font-family: $font-primary !important;
+  // font-size: 10px !important;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: $font-secondary;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
 }
 
-main.entry-content{
-    h1{font-size: $size-1;}
-    h2{font-size: $size-2;}
-    h3{font-size: $size-3;}
-    h4{font-size: $size-4;}
-    h5{font-size: $size-5;}
-    h6{font-size: $size-6;}
+main.entry-content {
+  h1 {
+    font-size: $size-1;
+  }
+  h2 {
+    font-size: $size-2;
+  }
+  h3 {
+    font-size: $size-3;
+  }
+  h4 {
+    font-size: $size-4;
+  }
+  h5 {
+    font-size: $size-5;
+  }
+  h6 {
+    font-size: $size-6;
+  }
 }
 
-h2.section-title{
-    // color: $primary;
-    font-weight: bold;
+h2.section-title {
+  // color: $primary;
+  font-weight: bold;
 }
 
-p{
-    font-size: 18px;
+p {
+  font-size: 18px;
 }
