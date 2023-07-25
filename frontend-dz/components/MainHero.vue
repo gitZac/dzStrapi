@@ -15,16 +15,13 @@
     </div>
   </section>
 </template>
-<script>
-export default {
-  name: "MainHero",
-  props: {
-    componentData: {
-      type: Object,
-      default: () => {},
-    },
+<script setup>
+const props = defineProps({
+  componentData: {
+    type: Object,
+    default: () => {},
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
