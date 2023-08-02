@@ -25,6 +25,11 @@
     },
     "slug": {
       "type": "uid"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
     }
   }
 }

@@ -28,6 +28,9 @@
     },
     "projectPageContent": {
       "type": "richtext"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

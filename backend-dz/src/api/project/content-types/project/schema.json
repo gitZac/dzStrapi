@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Project": {
+    "project": {
       "type": "component",
       "repeatable": false,
       "component": "cards.project-card"
