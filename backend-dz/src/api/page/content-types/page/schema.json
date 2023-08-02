@@ -17,7 +17,8 @@
       "components": [
         "global.project",
         "global.main-hero",
-        "global.all-about"
+        "global.all-about",
+        "global.project-relation"
       ]
     },
     "pageTitle": {
@@ -25,11 +26,6 @@
     },
     "slug": {
       "type": "uid"
-    },
-    "projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project"
     }
   }
 }

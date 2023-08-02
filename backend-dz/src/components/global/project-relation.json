@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_project_relations",
+  "info": {
+    "displayName": "Project Relation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    },
+    "componentId": {
+      "type": "string"
+    }
+  }
+}

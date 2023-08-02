@@ -17,14 +17,8 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
-  extraComponents: {
-    type: Array,
-    default: ()=> []
-  }
 });
 let components = ref([]);
-
-props.componentData.push(...props.extraComponents);
 
 components = props.componentData.map((component) => {
   const componentName = component.componentId;
@@ -37,4 +31,5 @@ components = props.componentData.map((component) => {
     }),
   };
 });
+
 </script>
