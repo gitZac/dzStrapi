@@ -1,7 +1,7 @@
 <template>
   <main class="entry-content">
     <NuxtLayout />
-    <DynamicRenderer :componentData="strapiComponentData"/>
+    <DynamicRenderer :componentData="strapiComponentData" />
     <NuxtLayout name="footer" />
   </main>
 </template>
@@ -13,6 +13,5 @@ const slug = "home";
 const strapiCollection = "pages";
 
 let pageData = await getSinglePageData(slug, strapiCollection);
-let strapiComponentData = pageData.data.components; //component data we get from strapi.
-
+let strapiComponentData = pageData.data.components;
 </script>

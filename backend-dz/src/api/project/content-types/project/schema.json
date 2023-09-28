@@ -16,6 +16,12 @@
       "type": "component",
       "repeatable": false,
       "component": "cards.project-card"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }

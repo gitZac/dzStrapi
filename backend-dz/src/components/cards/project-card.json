@@ -29,8 +29,16 @@
     "projectPageContent": {
       "type": "richtext"
     },
-    "slug": {
-      "type": "string"
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

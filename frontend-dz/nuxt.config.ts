@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       STRAPI_API_BASE: process.env.STRAPI_API_BASE,
+      STRAPI_URL_BASE: process.env.STRAPI_URL_BASE,
     },
   },
   vite: {
