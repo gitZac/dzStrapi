@@ -1,30 +1,32 @@
 <template>
-  <article
-    class="project-card"
-    :style="`background-image: url(${
-      config.public.STRAPI_URL_BASE + getBackgroundImage
-    })`">
-    <div class="project-card__inner">
-      <div class="project-card__logo grow animate--fast">
-        <img :src="config.public.STRAPI_URL_BASE + getProjectIcon" alt="" />
-      </div>
+  <a :href="'/projects/' + slug">
+    <article
+      class="project-card"
+      :style="`background-image: url(${
+        config.public.STRAPI_URL_BASE + getBackgroundImage
+      })`">
+      <div class="project-card__inner">
+        <div class="project-card__logo grow animate--fast">
+          <img :src="config.public.STRAPI_URL_BASE + getProjectIcon" alt="" />
+        </div>
 
-      <div
-        class="project-card__icon-wrap abs-wrapper abs-wrapper--center fade-in animate--fast">
-        <v-icon class="project-card__icon" icon="mdi-eye" size="24px" />
-        <!-- <p class="project-card__read-more">Learn More</p> -->
-      </div>
+        <div
+          class="project-card__icon-wrap abs-wrapper abs-wrapper--center fade-in animate--fast">
+          <v-icon class="project-card__icon" icon="mdi-eye" size="24px" />
+          <p class="project-card__read-more">Learn More</p>
+        </div>
 
-      <div
-        class="abs-wrapper abs-wrapper--title-center abs-wrapper--center-bottom pad-tb-1">
-        <h2 class="animate--fast project-card__title">This a title</h2>
-        <p
-          class="project-card__cta animate--fast fade-in zoom-in--left subtitle is-4">
-          Descrip
-        </p>
+        <div
+          class="abs-wrapper abs-wrapper--title-center abs-wrapper--center-bottom pad-tb-1">
+          <h2 class="animate--fast project-card__title">This a title</h2>
+          <p
+            class="project-card__cta animate--fast fade-in zoom-in--left subtitle is-4">
+            Descrip
+          </p>
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
+  </a>
 </template>
 
 <script setup>
@@ -35,7 +37,13 @@ const props = defineProps({
     type: Object,
     default: () => {},
   },
+  slug: {
+    type: String,
+    default: "",
+  },
 });
+
+console.log(props.slug);
 
 const getBackgroundImage = computed(() => {
   if (props.componentData.backgroundImage.data !== null) {

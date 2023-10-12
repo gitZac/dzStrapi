@@ -13,6 +13,12 @@
     },
     "componentId": {
       "type": "string"
+    },
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionIntro": {
+      "type": "string"
     }
   }
 }

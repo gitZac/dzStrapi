@@ -1,4 +1,3 @@
-!
 <template>
   <div>
     <h1>From dynamic route</h1>
@@ -24,8 +23,6 @@ const { data } = await useAsyncData(
     },
   }
 );
-
-console.log(data.value.project);
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,13 +1,15 @@
 <template>
   <section class="project-layout">
     <div class="container">
-      <h2 class="section-title">My Projects</h2>
+      <h2 class="section-title">{{ componentData.sectionTitle }}</h2>
       <div class="columns is-multiline">
         <div
           v-for="(project, index) in projectData"
           :key="project.id"
           class="column is-half">
-          <ProjectCard :componentData="project.attributes.project" />
+          <ProjectCard
+            :componentData="project.attributes.project"
+            :slug="project.attributes.slug" />
         </div>
       </div>
     </div>
