@@ -43,8 +43,6 @@ const props = defineProps({
   },
 });
 
-console.log(props.slug);
-
 const getBackgroundImage = computed(() => {
   if (props.componentData.backgroundImage.data !== null) {
     return props.componentData.backgroundImage.data.attributes.url;

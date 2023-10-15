@@ -26,9 +26,6 @@
     "projectCtaText": {
       "type": "string"
     },
-    "projectPageContent": {
-      "type": "richtext"
-    },
     "backgroundImage": {
       "type": "media",
       "multiple": false,

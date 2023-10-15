@@ -20,8 +20,12 @@
     "slug": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
+    "pageContent": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
