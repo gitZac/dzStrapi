@@ -2,7 +2,7 @@
   <div>
     <h1>From dynamic route</h1>
 
-    {{ data.project }}
+    {{ data.page }}
   </div>
 </template>
 
@@ -16,13 +16,15 @@ const { data } = await useAsyncData(
     return getSinglePageData(pageSlug, "projects");
   },
   {
-    transform(pageData) {
+    transform(page) {
       return {
-        project: pageData.data.project,
+        page: page.data,
       };
     },
   }
 );
+
+console.log(data.value);
 </script>
 
 <style lang="scss" scoped></style>

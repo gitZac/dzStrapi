@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "project": {
+    "projectCard": {
       "type": "component",
       "repeatable": false,
       "component": "cards.project-card"
@@ -20,7 +20,7 @@
     "slug": {
       "type": "string"
     },
-    "pageContent": {
+    "singlePageContent": {
       "type": "customField",
       "options": {
         "preset": "toolbar"

@@ -14,4 +14,6 @@ const strapiCollection = "pages";
 
 let pageData = await getSinglePageData(slug, strapiCollection);
 let strapiComponentData = pageData.data.components;
+
+console.log(pageData);
 </script>

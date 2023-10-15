@@ -8,7 +8,7 @@
           :key="project.id"
           class="column is-half">
           <ProjectCard
-            :componentData="project.attributes.project"
+            :componentData="project.attributes.projectCard"
             :slug="project.attributes.slug" />
         </div>
       </div>
@@ -26,6 +26,8 @@ const props = defineProps({
 
 let projectData = ref([]);
 projectData.value = props.componentData.projects.data;
+
+console.log(props.componentData);
 </script>
 
 <style lang="scss" scoped>
