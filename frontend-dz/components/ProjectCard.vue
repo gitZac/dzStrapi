@@ -11,17 +11,13 @@
         </div>
 
         <div
-          class="project-card__icon-wrap abs-wrapper abs-wrapper--center fade-in animate--fast">
-          <v-icon class="project-card__icon" icon="mdi-eye" size="24px" />
-          <p class="project-card__read-more">Learn More</p>
-        </div>
-
-        <div
           class="abs-wrapper abs-wrapper--title-center abs-wrapper--center-bottom pad-tb-1">
-          <h2 class="animate--fast project-card__title">This a title</h2>
+          <h2 class="animate--fast project-card__title">
+            {{ componentData.projectTitle }}
+          </h2>
           <p
             class="project-card__cta animate--fast fade-in zoom-in--left subtitle is-4">
-            Descrip
+            {{ componentData.projectShortDescription }}
           </p>
         </div>
       </div>

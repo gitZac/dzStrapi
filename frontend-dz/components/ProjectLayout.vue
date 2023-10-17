@@ -26,8 +26,6 @@ const props = defineProps({
 
 let projectData = ref([]);
 projectData.value = props.componentData.projects.data;
-
-console.log(props.componentData);
 </script>
 
 <style lang="scss" scoped>
