@@ -1,28 +1,17 @@
 <template>
-  <article>
-    <section class="blog-header">
-      <h1>{{ data.page.projectTitle }}</h1>
-      <img
-        :src="
-          config.public.STRAPI_URL_BASE +
-          data.page.featuredImage.data.attributes.url
-        "
-        alt="" />
-    </section>
-
-    <section class="page-content">
-      <div v-html="goodStr"></div>
-    </section>
-
-    <pre>{{ data.page }}</pre>
-  </article>
+  <main class="entry-content">
+    <NuxtLayout />
+    <BlogHero
+      :heroImage="data.page.featuredImage.data.attributes"
+      :title="data.page.projectTitle" />
+    <PageContent :content="data.page.singlePageContent" />
+    <NuxtLayout name="footer" />
+  </main>
 </template>
 
 <script setup>
 import getSinglePageData from "~~/lib/getStrapiSinglePageData";
-import { replaceRelativeImgSrcs } from "~~/lib/utils";
 
-const config = useRuntimeConfig();
 const route = useRoute();
 const pageSlug = route.params.slug;
 
@@ -38,9 +27,4 @@ const { data } = await useAsyncData(
     },
   }
 );
-
-const deepStr = data.value.page.singlePageContent;
-let goodStr = replaceRelativeImgSrcs(deepStr);
 </script>
-
-<style lang="scss" scoped></style>
