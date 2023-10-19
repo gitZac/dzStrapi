@@ -1,10 +1,12 @@
 <template>
   <main class="entry-content">
     <NuxtLayout />
-    <BlogHero
-      :heroImage="data.page.featuredImage.data.attributes"
-      :title="data.page.projectTitle" />
-    <PageContent :content="data.page.singlePageContent" />
+    <article class="blog-post">
+      <BlogHero
+        :heroImage="data.page.featuredImage?.data?.attributes"
+        :title="data.page.projectTitle" />
+      <PageContent :content="data.page.singlePageContent" />
+    </article>
     <NuxtLayout name="footer" />
   </main>
 </template>
@@ -28,3 +30,10 @@ const { data } = await useAsyncData(
   }
 );
 </script>
+
+<style lang="scss" scoped>
+.blog-post {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+</style>

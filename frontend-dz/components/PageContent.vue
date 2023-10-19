@@ -20,3 +20,15 @@ const getParsedConent = computed(() => {
   return replaceRelativeImgSrcs(props.content);
 });
 </script>
+
+<style lang="scss">
+.page-content {
+  p {
+    padding-bottom: 2rem;
+  }
+  img {
+    border-radius: 16px;
+    margin-bottom: 3rem;
+  }
+}
+</style>
