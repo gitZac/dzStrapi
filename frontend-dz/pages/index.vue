@@ -9,6 +9,11 @@
 <script setup>
 import getSinglePageData from "~/lib/getStrapiSinglePageData.js";
 
+// Things to build:
+// buttons generator: https://markodenic.com/tools/buttons-generator/
+// Premiere league table
+// Lord of the Rings or English Football ground
+
 const slug = "home";
 const strapiCollection = "pages";
 

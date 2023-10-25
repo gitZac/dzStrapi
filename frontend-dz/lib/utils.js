@@ -17,3 +17,20 @@ export function replaceRelativeImgSrcs(str) {
 
   return replacedStrNoSrcset;
 }
+
+export function getFormattedComponentName(cmpStr) {
+  const capRegex = /(\b[a-z](?!\s))/g;
+
+  //Remove global
+  let formattedStr = cmpStr.replace("global.", "");
+
+  //Capitalize before and after dash
+  formattedStr = formattedStr.replace(capRegex, (str) => {
+    return str.toUpperCase();
+  });
+
+  // Remove dash
+  formattedStr = formattedStr.replace("-", "");
+
+  return formattedStr;
+}

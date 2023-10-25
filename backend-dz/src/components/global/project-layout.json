@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_global_project_relations",
+  "collectionName": "components_global_project_layouts",
   "info": {
-    "displayName": "Project Relation",
-    "description": ""
+    "displayName": "ProjectLayout"
   },
   "options": {},
   "attributes": {
@@ -11,13 +10,7 @@
       "relation": "oneToMany",
       "target": "api::project.project"
     },
-    "componentId": {
-      "type": "string"
-    },
     "sectionTitle": {
-      "type": "string"
-    },
-    "sectionIntro": {
       "type": "string"
     }
   }

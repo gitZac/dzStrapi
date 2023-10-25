@@ -5,13 +5,14 @@
       v-for="(component, index) in components"
       :is="component.component"
       :key="index"
-      :componentData="component.data"
-    >
+      :componentData="component.data">
     </component>
   </div>
 </template>
 
 <script setup>
+import { getFormattedComponentName } from "~~/lib/utils";
+
 const props = defineProps({
   componentData: {
     type: Array,
@@ -21,9 +22,9 @@ const props = defineProps({
 let components = ref([]);
 
 components = props.componentData.map((component) => {
-  const componentName = component.componentId;
-  const data  = component;
-  
+  const componentName = getFormattedComponentName(component.__component);
+  const data = component;
+
   return {
     data: data,
     component: defineAsyncComponent(() => {
@@ -31,5 +32,4 @@ components = props.componentData.map((component) => {
     }),
   };
 });
-
 </script>
