@@ -10,6 +10,11 @@
     url("./../fonts/Merriweather-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Sora";
+  src: local("Sora"), url("./../fonts/sora-var.ttf") format("truetype");
+}
+
 html,
 body {
   font-family: $font-primary !important;

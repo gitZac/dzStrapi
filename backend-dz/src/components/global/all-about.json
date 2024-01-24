@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "sectionTitle": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -29,6 +26,16 @@
       "type": "component",
       "repeatable": true,
       "component": "utility.list-item"
+    },
+    "sectionTitle": {
+      "type": "customField",
+      "options": {
+        "output": "html"
+      },
+      "customField": "plugin::bold-title-editor.title"
+    },
+    "sectionIntro": {
+      "type": "string"
     }
   }
 }
