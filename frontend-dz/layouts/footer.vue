@@ -1,11 +1,10 @@
 <template>
-    <div>
-        <NavFooter :menuData="menuData.menu"/>
-    </div>
+  <div>
+    <NavFooter :menuData="menu" />
+  </div>
 </template>
 
 <script setup>
-import getMenuData from '~/lib/getStrapiMenuData'
-let menuData = ref([])
-menuData.value = await getMenuData("1")
+const strapi = useStrapiData();
+const { menu } = await strapi.getMenu("1");
 </script>

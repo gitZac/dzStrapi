@@ -3,32 +3,18 @@
     <NuxtLayout />
     <article class="blog-post">
       <BlogHero
-        :heroImage="data.page.featuredImage?.data?.attributes"
-        :title="data.page.projectTitle" />
-      <PageContent :content="data.page.singlePageContent" />
+        :heroImage="page.featuredImage?.data?.attributes"
+        :title="page.projectTitle" />
+      <PageContent :content="page.singlePageContent" />
     </article>
     <NuxtLayout name="footer" />
   </main>
 </template>
 
 <script setup>
-import getSinglePageData from "~~/lib/getStrapiSinglePageData";
-
 const route = useRoute();
-const pageSlug = route.params.slug;
-
-const { data } = await useAsyncData(
-  () => {
-    return getSinglePageData(pageSlug, "projects");
-  },
-  {
-    transform(page) {
-      return {
-        page: page.data,
-      };
-    },
-  }
-);
+const strapi = useStrapiData();
+const { page } = await strapi.getSinglePage(route.params.slug, "projects");
 </script>
 
 <style lang="scss" scoped>

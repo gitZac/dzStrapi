@@ -1,7 +1,7 @@
 <template>
   <section class="page-content">
     <div class="container">
-      <div class="page-content__content" v-html="getParsedConent"></div>
+      <div class="page-content__content" v-html="getParsedContent"></div>
     </div>
   </section>
 </template>
@@ -14,10 +14,11 @@ const props = defineProps({
   },
 });
 const config = useRuntimeConfig();
+console.log(config.public);
 
 const base = config.public.STRAPI_URL_BASE;
 
-const getParsedConent = computed(() => {
+const getParsedContent = computed(() => {
   return replaceRelativeImgSrcs(props.content, base);
 });
 </script>

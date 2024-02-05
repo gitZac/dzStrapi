@@ -4,7 +4,9 @@ export function replaceRelativeImgSrcs(str, base) {
 
   //Find the img src and replace it with an absolute url.
 
-  let replacedStr = str.replace(regex, 'src="' + +"/");
+  let replacedStr = str.replace(regex, 'src="' + base + "/");
+
+  console.log(replacedStr);
 
   //Iterate over our replaced string and remove the srcset attribute.
 

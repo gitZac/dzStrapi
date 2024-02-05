@@ -1,6 +1,8 @@
 const config = useRuntimeConfig();
 
 export function replaceRelativeImgSrcs(str) {
+  console.log("hello");
+  console.log(str);
   const regex = /src="\//g;
   const regexSrcset = /srcset\s*=\s*"(.+?)"/g;
 

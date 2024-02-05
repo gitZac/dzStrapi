@@ -14,7 +14,7 @@ export const useStrapiData = () => {
 
       return {
         components: data.data[0].attributes.components,
-        meta: data.data[0].attributes,
+        page: data.data[0].attributes,
       };
     } catch (err) {
       console.log(err);
