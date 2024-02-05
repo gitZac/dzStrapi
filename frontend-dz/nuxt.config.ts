@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
-  ssr: false,
+  ssr: true,
   runtimeConfig: {
     public: {
       STRAPI_API_BASE: process.env.STRAPI_API_BASE,

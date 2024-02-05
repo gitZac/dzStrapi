@@ -7,17 +7,18 @@
 </template>
 
 <script setup>
-import { replaceRelativeImgSrcs } from "~~/lib/utils";
-
 const props = defineProps({
   content: {
     type: String,
     default: "Sorry, there is no content to display at this time.",
   },
 });
+const config = useRuntimeConfig();
+
+const base = config.public.STRAPI_URL_BASE;
 
 const getParsedConent = computed(() => {
-  return replaceRelativeImgSrcs(props.content);
+  return replaceRelativeImgSrcs(props.content, base);
 });
 </script>
 

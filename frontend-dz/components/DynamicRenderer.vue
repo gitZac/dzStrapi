@@ -11,8 +11,6 @@
 </template>
 
 <script setup>
-import { getFormattedComponentName } from "~~/lib/utils";
-
 const props = defineProps({
   componentData: {
     type: Array,
