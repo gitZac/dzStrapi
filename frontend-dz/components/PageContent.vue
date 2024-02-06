@@ -14,8 +14,6 @@ const props = defineProps({
   },
 });
 const config = useRuntimeConfig();
-console.log(config.public);
-
 const base = config.public.STRAPI_URL_BASE;
 
 const getParsedContent = computed(() => {

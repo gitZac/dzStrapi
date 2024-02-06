@@ -9,8 +9,7 @@
         <UtilityButton
           v-for="(button, index) in componentData.buttons"
           :key="index"
-          :buttonProps="button"
-        />
+          :buttonProps="button" />
       </div>
     </div>
   </section>
@@ -32,7 +31,6 @@ const props = defineProps({
     padding: 5rem 0;
   }
   &__title {
-    font-family: $font-secondary;
     font-weight: bold;
   }
   &__text {

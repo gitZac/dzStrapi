@@ -1,4 +1,5 @@
 import { ofetch } from "ofetch";
+
 export const useStrapiData = () => {
   const config = useRuntimeConfig();
 
