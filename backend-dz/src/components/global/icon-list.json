@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_global_icon_lists",
+  "info": {
+    "displayName": "IconList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionIntro": {
+      "type": "text"
+    },
+    "listItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utility.list-item"
+    }
+  }
+}
