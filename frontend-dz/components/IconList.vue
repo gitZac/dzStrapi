@@ -1,21 +1,21 @@
 <template>
-  <section class="section all-about has-background-grey-light">
+  <section class="section icon-list has-background-grey-light">
     <div class="container">
-      <div class="all-about__intro">
+      <div class="icon-list__intro">
         <h2 v-html="componentData.sectionTitle" class="section-title"></h2>
         <p class="">{{ componentData.sectionIntro }}</p>
       </div>
 
-      <div class="all-about__list-items columns is-multiline">
+      <div class="icon-list__list-items columns is-multiline">
         <li
           v-for="(item, index) in componentData.listItem"
           :key="index"
-          class="all-about__list-item column is-4">
-          <div class="all-about__list-item-wrap">
-            <v-icon :icon="'mdi-' + item.icon" class="all-about__icon" />
-            <div class="all-about__list-item-content">
-              <h3 class="all-about__list-item-title">{{ item.title }}</h3>
-              <p class="all-about__list-item-description">
+          class="icon-list__list-item column is-4">
+          <div class="icon-list__list-item-wrap">
+            <v-icon :icon="'mdi-' + item.icon" class="icon-list__icon" />
+            <div class="icon-list__list-item-content">
+              <h3 class="icon-list__list-item-title">{{ item.title }}</h3>
+              <p class="icon-list__list-item-description">
                 {{ item.description }}
               </p>
             </div>
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-.all-about {
+.icon-list {
   color: #fff;
   background: url("./../assets/img/background-dark-grad.svg") no-repeat center
     center;
@@ -113,7 +113,7 @@ export default {
   }
 }
 
-.section.all-about {
+.section.icon-list {
   padding: 6rem 3rem;
 }
 </style>

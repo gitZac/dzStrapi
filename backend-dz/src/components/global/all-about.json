@@ -17,16 +17,6 @@
         "audios"
       ]
     },
-    "ctaButtons": {
-      "type": "component",
-      "repeatable": true,
-      "component": "utility.button"
-    },
-    "listItem": {
-      "type": "component",
-      "repeatable": true,
-      "component": "utility.list-item"
-    },
     "sectionTitle": {
       "type": "customField",
       "options": {
@@ -34,8 +24,13 @@
       },
       "customField": "plugin::bold-title-editor.title"
     },
-    "sectionIntro": {
-      "type": "string"
+    "listItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utility.list-item"
+    },
+    "intro": {
+      "type": "text"
     }
   }
 }

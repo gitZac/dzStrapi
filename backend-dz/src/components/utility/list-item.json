@@ -1,13 +1,11 @@
 {
   "collectionName": "components_utility_list_items",
   "info": {
-    "displayName": "listItem"
+    "displayName": "listItem",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "description": {
       "type": "string"
     },
@@ -21,6 +19,9 @@
         "facebook",
         "twitter"
       ]
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
