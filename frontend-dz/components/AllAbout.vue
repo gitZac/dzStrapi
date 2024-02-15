@@ -17,7 +17,24 @@
         </div>
       </div>
 
-      <div class="all-about__content"></div>
+      <div class="columns is-multiline">
+        <ul class="column is-half-desktop all-about__list-left">
+          <li
+            v-for="(item, index) in componentData.listItem"
+            class="all-about__list-item">
+            {{ item.title }}:
+            <span class="all-about__list-accent">{{ item.description }}</span>
+          </li>
+        </ul>
+        <ul class="column is-half-desktop all-about__list-right">
+          <li
+            v-for="(item, index) in componentData.listItem2"
+            class="all-about__list-item">
+            {{ item.title }}:
+            <span class="all-about__list-accent">{{ item.description }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
@@ -46,18 +63,37 @@ const props = defineProps({
   &__content-wrap {
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px !important;
   }
 
   &__content {
-    margin-left: 2rem;
+    @include from($lg) {
+      margin-left: 2rem;
+    }
   }
 
   &__image {
     max-width: 250px;
+    margin: 0 auto;
+  }
 
-    // img {
-    //   max-width: 250px;
-    // }
+  &__list-left,
+  &__list-right {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__list-item {
+    margin-bottom: 15px;
+
+    @include from($lg) {
+      margin-left: 100px;
+    }
+  }
+
+  &__list-accent {
+    color: $primary;
+    font-weight: 500;
   }
 }
 </style>
