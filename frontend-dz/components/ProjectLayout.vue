@@ -1,5 +1,5 @@
 <template>
-  <section class="project-layout">
+  <section class="section project-layout">
     <div class="container">
       <h2 class="section-title">{{ componentData.sectionTitle }}</h2>
       <div class="columns is-multiline">
@@ -27,9 +27,10 @@ const props = defineProps({
 let projectData = ref([]);
 projectData.value = props.componentData.projects.data;
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 .project-layout {
-  padding: 3rem 0;
+  .section-title {
+    padding-bottom: 5rem;
+  }
 }
 </style>

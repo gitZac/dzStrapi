@@ -1,0 +1,11 @@
+section.section {
+  padding: 3rem 1rem;
+
+  @include from($lg) {
+    padding: 6rem 3rem;
+  }
+}
+
+.section-title {
+  text-align: center;
+}

@@ -112,8 +112,4 @@ export default {
     }
   }
 }
-
-.section.icon-list {
-  padding: 6rem 3rem;
-}
 </style>

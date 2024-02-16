@@ -6,15 +6,15 @@
         config.public.STRAPI_URL_BASE + getBackgroundImage
       })`">
       <div class="project-card__inner">
-        <div class="project-card__logo grow animate--fast">
+        <!-- <div class="project-card__logo grow animate--fast">
           <img :src="config.public.STRAPI_URL_BASE + getProjectIcon" alt="" />
-        </div>
+        </div> -->
 
         <div
           class="abs-wrapper abs-wrapper--title-center abs-wrapper--center-bottom pad-tb-1">
-          <h2 class="animate--fast project-card__title">
+          <h3 class="animate--fast project-card__title fade-in zoom-in--left">
             {{ componentData.projectTitle }}
-          </h2>
+          </h3>
           <p
             class="project-card__cta animate--fast fade-in zoom-in--left subtitle is-4">
             {{ componentData.projectShortDescription }}
@@ -119,6 +119,8 @@ const getProjectIcon = computed(() => {
 
   &__inner {
     width: 100%;
+    display: flex;
+    align-items: center;
   }
 
   &__logo {
@@ -135,10 +137,13 @@ const getProjectIcon = computed(() => {
     color: #fff;
     margin: 0 auto;
     width: 100%;
+    text-transform: uppercase;
+    line-height: 40px;
   }
 
   &__cta {
     color: #fff;
+    color: $primary;
   }
 
   &__icon-wrap {
