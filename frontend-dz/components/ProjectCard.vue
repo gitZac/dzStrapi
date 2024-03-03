@@ -47,13 +47,13 @@ const getBackgroundImage = computed(() => {
   }
 });
 
-const getProjectIcon = computed(() => {
-  if (props.componentData.projectIcon.data !== null) {
-    return props.componentData.projectIcon.data.attributes.url;
-  } else {
-    return "";
-  }
-});
+// const getProjectIcon = computed(() => {
+//   if (props.componentData.projectIcon.data !== null) {
+//     return props.componentData.projectIcon.data.attributes.url;
+//   } else {
+//     return "";
+//   }
+// });
 </script>
 
 <style lang="scss" scoped>

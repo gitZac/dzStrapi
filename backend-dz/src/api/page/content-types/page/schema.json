@@ -18,7 +18,8 @@
         "global.main-hero",
         "global.all-about",
         "global.project-layout",
-        "global.icon-list"
+        "global.icon-list",
+        "global.contact-form"
       ]
     },
     "pageTitle": {

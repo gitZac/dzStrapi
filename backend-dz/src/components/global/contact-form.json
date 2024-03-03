@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_contact_forms",
+  "info": {
+    "displayName": "ContactForm"
+  },
+  "options": {},
+  "attributes": {
+    "SectionTitle": {
+      "type": "string"
+    },
+    "SectionIntro": {
+      "type": "string"
+    }
+  }
+}
