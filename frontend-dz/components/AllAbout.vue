@@ -35,9 +35,6 @@
           </li>
         </ul>
       </div>
-      <div class="all-about__contact">
-        <h3>Get in touch</h3>
-      </div>
     </div>
   </section>
 </template>

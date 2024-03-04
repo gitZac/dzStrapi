@@ -32,5 +32,9 @@ projectData.value = props.componentData.projects.data;
   .section-title {
     padding-bottom: 5rem;
   }
+
+  .column {
+    padding: 0;
+  }
 }
 </style>

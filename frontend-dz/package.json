@@ -12,6 +12,7 @@
     "nuxt": "^3.2.3"
   },
   "dependencies": {
+    "@vee-validate/nuxt": "^4.12.5",
     "bootstrap": "^5.2.3",
     "bulma": "^0.9.4",
     "dotenv": "^16.4.1",

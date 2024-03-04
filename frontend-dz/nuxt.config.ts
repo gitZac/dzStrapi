@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       STRAPI_URL_BASE: process.env.STRAPI_URL_BASE,
     },
   },
+  modules: ["@vee-validate/nuxt"],
   vite: {
     css: {
       preprocessorOptions: {
