@@ -50,6 +50,9 @@
 
 <script setup>
 import { useField, useForm } from "vee-validate";
+import { useStrapiData } from "~/composables/useStrapiData";
+
+const strapi = useStrapiData();
 
 const props = defineProps({
   componentData: {
@@ -89,7 +92,7 @@ const phone = useField("phone");
 const email = useField("email");
 
 const submit = handleSubmit((values) => {
-  alert(JSON.stringify(values, null, 2));
+  strapi.postFormData("contacts", values);
 });
 </script>
 

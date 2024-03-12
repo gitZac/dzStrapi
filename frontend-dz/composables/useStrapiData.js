@@ -40,8 +40,23 @@ export const useStrapiData = () => {
     }
   };
 
+  const postFormData = async (collection, formData) => {
+    const url = `${config.public.STRAPI_API_BASE}/${collection}`;
+    try {
+      await ofetch(url, {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: formData }),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return {
     getSinglePage,
     getMenu,
+    postFormData,
   };
 };
