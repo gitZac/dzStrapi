@@ -9,6 +9,17 @@ export default defineNuxtConfig({
     public: {
       STRAPI_API_BASE: process.env.STRAPI_API_BASE,
       STRAPI_URL_BASE: process.env.STRAPI_URL_BASE,
+      GRECAPTCHA_SITE_KEY: process.env.GRECAPTCHA_SITE_KEY,
+    },
+  },
+  app: {
+    head: {
+      script: [
+        {
+          src: `https://www.google.com/recaptcha/api.js?render=${process.env.GRECAPTCHA_SITE_KEY}`,
+          async: true,
+        },
+      ],
     },
   },
   modules: ["@vee-validate/nuxt"],

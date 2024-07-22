@@ -40,9 +40,30 @@ export const useStrapiData = () => {
     }
   };
 
+  const _getRecaptchaToken = async (siteKey) => {
+    let token = "recaptcha-library-not-found";
+
+    if (window.hasOwnProperty("grecaptcha")) {
+      try {
+        token = await window.grecaptcha.execute(siteKey, {
+          action: "submit",
+        });
+      } catch (e) {
+        console.error(e);
+        token = "recaptcha-client-side-error";
+      }
+    }
+    console.log(token);
+    return token;
+  };
+
   const postFormData = async (collection, formData) => {
     const url = `${config.public.STRAPI_API_BASE}/${collection}`;
     try {
+      const recaptcaToken = await _getRecaptchaToken(
+        config.public.GRECAPTCHA_SITE_KEY
+      );
+
       await ofetch(url, {
         method: "POST",
         mode: "cors",
