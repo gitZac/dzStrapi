@@ -53,7 +53,6 @@ export const useStrapiData = () => {
         token = "recaptcha-client-side-error";
       }
     }
-    console.log(token);
     return token;
   };
 
@@ -64,12 +63,23 @@ export const useStrapiData = () => {
         config.public.GRECAPTCHA_SITE_KEY
       );
 
-      await ofetch(url, {
+      const res = await fetch("/api/recaptcha", {
         method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData }),
+        body: JSON.stringify({
+          token: recaptcaToken,
+        }),
       });
+
+      const { score } = await res.json();
+
+      if (score > 0.5) {
+        await ofetch(url, {
+          method: "POST",
+          mode: "cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ data: formData }),
+        });
+      }
     } catch (err) {
       console.error(err);
     }
