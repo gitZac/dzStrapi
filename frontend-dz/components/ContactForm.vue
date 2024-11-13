@@ -79,7 +79,7 @@ const { handleSubmit } = useForm({
       return "Phone number needs to be at least 9 digits.";
     },
     email(value) {
-      if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
+      if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) return true;
 
       return "Must be a valid e-mail.";
     },
@@ -90,9 +90,16 @@ const firstName = useField("firstName");
 const lastName = useField("lastName");
 const phone = useField("phone");
 const email = useField("email");
+const formFields = [firstName, lastName, phone, email];
 
-const submit = handleSubmit((values) => {
-  strapi.postFormData("contacts", values);
+const submit = handleSubmit(async (values) => {
+  const submitted = await strapi.postFormData("contacts", values);
+
+  if (submitted.status == "OK") {
+    formFields.forEach((field) => {
+      field.value.value = "";
+    });
+  }
 });
 </script>
 

@@ -64,6 +64,7 @@ export const useStrapiData = () => {
 
   const postFormData = async (collection, formData) => {
     const url = `${config.public.STRAPI_API_BASE}/${collection}`;
+
     try {
       const recaptcaToken = await _getRecaptchaToken(
         config.public.GRECAPTCHA_SITE_KEY
@@ -85,6 +86,11 @@ export const useStrapiData = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ data: formData }),
         });
+
+        return {
+          msg: "Form submission successful",
+          status: "OK",
+        };
       }
     } catch (err) {
       console.error(err);
