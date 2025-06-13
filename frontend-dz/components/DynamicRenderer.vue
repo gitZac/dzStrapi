@@ -17,6 +17,7 @@ const props = defineProps({
     default: () => [],
   },
 });
+
 let components = ref([]);
 
 components = props.componentData.map((component) => {
