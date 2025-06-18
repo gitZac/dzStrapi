@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar dz-header" role="navigation" aria-label="main navigation">
+  <nav
+    v-if="menuData.length > 0"
+    class="navbar dz-header"
+    role="navigation"
+    aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
         <a class="dz-header__logo-link" href="/">
