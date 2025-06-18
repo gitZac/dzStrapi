@@ -13,6 +13,7 @@ export const useStrapiData = () => {
       });
 
       const data = await response.json();
+
       const { attributes } = data.data[0];
       const { components } = attributes;
 
