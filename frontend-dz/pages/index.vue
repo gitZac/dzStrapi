@@ -1,8 +1,8 @@
 <template>
   <main class="entry-content">
-    <NuxtLayout />
+    <!-- <NuxtLayout />
     <DynamicRenderer :componentData="components" />
-    <NuxtLayout name="footer" />
+    <NuxtLayout name="footer" /> -->
   </main>
 </template>
 
