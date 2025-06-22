@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
+    baseURL: "/frontend",
     head: {
       script: [
         {
