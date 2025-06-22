@@ -1,3 +1,3 @@
-// module.exports = ({ env }) => ({
-//   url: "/prod/dashboard",
-// });
+module.exports = ({ env }) => ({
+  url: "/admin",
+});
