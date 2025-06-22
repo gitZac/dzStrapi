@@ -1,5 +1,5 @@
 <template>
-  <footer v-if="menuData.length > 0" class="footer">
+  <footer class="footer">
     <nav class="footer__navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="footer__navbar-menu">

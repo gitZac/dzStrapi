@@ -1,11 +1,23 @@
 <template>
-  <div>
-    <NavNavbar :menuData="menu" />
-  </div>
+  <div v-if="!menuData">Loading</div>
+  <div v-else><NavNavbar :menuData="menuData" /></div>
 </template>
 
 <script setup>
 import { useStrapiData } from "~/composables/useStrapiData";
 const strapi = useStrapiData();
-const { menu } = await strapi.getMenu("1");
+const menuData = ref(null);
+
+onMounted(async () => {
+  try {
+    const { menu } = await strapi.getMenu("1");
+    menuData.value = menu;
+  } catch (err) {
+    menu.value = {
+      items: [],
+    };
+    console.log(err);
+    return;
+  }
+});
 </script>

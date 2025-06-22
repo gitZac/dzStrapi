@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!components.length" class="">pending</div>
+    <div v-if="!components.length" class="">Pending...</div>
     <component
       v-once
       v-else
@@ -19,19 +19,6 @@ const props = defineProps({
     default: () => [],
   },
 });
-
-// let components = ref([]);
-// components.value = props.componentData.map((component) => {
-//   const componentName = getFormattedComponentName(component.__component);
-//   const data = component;
-
-//   return {
-//     data: data,
-//     component: defineAsyncComponent(() => {
-//       return import(`../components/${componentName}.vue`);
-//     }),
-//   };
-// });
 
 const components = computed(() => {
   return props.componentData.map((component) => {

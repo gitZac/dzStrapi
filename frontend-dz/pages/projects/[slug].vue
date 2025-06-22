@@ -1,23 +1,38 @@
 <template>
-  <main class="entry-content">
+  <main v-if="attributesData" class="entry-content">
     <NuxtLayout />
     <article class="blog-post">
       <BlogHero
-        :heroImage="attributes.featuredImage?.data?.attributes"
-        :title="attributes.projectTitle" />
-      <PageContent :content="attributes.singlePageContent" />
+        :heroImage="attributesData.featuredImage?.data?.attributes"
+        :title="attributesData.projectTitle" />
+      <PageContent :content="attributesData.singlePageContent" />
     </article>
     <NuxtLayout name="footer" />
   </main>
+  <main v-else>Attribs loading</main>
 </template>
 
 <script setup>
 const route = useRoute();
 const strapi = useStrapiData();
-const { attributes } = await strapi.getSinglePage(
-  route.params.slug,
-  "projects"
-);
+const attributesData = ref(null);
+
+onMounted(async () => {
+  try {
+    const { attributes } = await strapi.getSinglePage(
+      route.params.slug,
+      "projects"
+    );
+
+    attributesData.value = attributes;
+  } catch (err) {
+    attributesData.value = {
+      components: [],
+    };
+    console.log(err);
+    return;
+  }
+});
 </script>
 
 <style lang="scss" scoped>

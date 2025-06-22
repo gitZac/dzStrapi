@@ -1,12 +1,9 @@
 <template>
   <main class="entry-content">
-    <!-- <NuxtLayout /> -->
-    <!-- 
-    <h2 v-if="componentData[0].__component">
-      {{ componentData[0].__component }}
-    </h2> -->
+    <NuxtLayout />
+
     <DynamicRenderer :componentData="componentData" />
-    <!-- <NuxtLayout name="footer" /> -->
+    <NuxtLayout name="footer" />
 
     <!-- {{ componentData }} -->
   </main>
