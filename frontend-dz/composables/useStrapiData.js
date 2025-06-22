@@ -6,7 +6,6 @@ export const useStrapiData = () => {
     const url = `${config.public.STRAPI_API_BASE}/${collection}` + filters;
 
     console.log(url);
-
     try {
       const response = await fetch(url, {
         headers: {
@@ -15,9 +14,6 @@ export const useStrapiData = () => {
       });
 
       const data = await response.json();
-
-      console.log(data);
-
       const { attributes } = data.data[0];
       const { components } = attributes;
 

@@ -1,8 +1,14 @@
 <template>
   <main class="entry-content">
-    <NuxtLayout />
-    <DynamicRenderer :componentData="components" />
-    <NuxtLayout name="footer" />
+    <!-- <NuxtLayout /> -->
+    <!-- 
+    <h2 v-if="componentData[0].__component">
+      {{ componentData[0].__component }}
+    </h2> -->
+    <DynamicRenderer :componentData="componentData" />
+    <!-- <NuxtLayout name="footer" /> -->
+
+    <!-- {{ componentData }} -->
   </main>
 </template>
 
@@ -10,5 +16,22 @@
 import { useStrapiData } from "~/composables/useStrapiData";
 
 const strapi = useStrapiData();
-const { components } = await strapi.getSinglePage("home", "pages");
+const componentData = ref([]);
+// const components = await strapi.getSinglePage("home", "pages");
+
+// console.log(components);
+// componentData.value = components;
+
+onMounted(async () => {
+  try {
+    const { components } = await strapi.getSinglePage("home", "pages");
+    componentData.value = components;
+  } catch (err) {
+    componentData.value = {
+      components: [],
+    };
+    console.log(err);
+    return;
+  }
+});
 </script>
