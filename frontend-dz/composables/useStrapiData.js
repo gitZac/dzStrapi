@@ -4,7 +4,6 @@ export const useStrapiData = () => {
   const getSinglePage = async (slug, collection) => {
     const filters = `?filters\[slug\][$eq]=${slug}&populate=deep,10`;
     const url = `${config.public.STRAPI_API_BASE}/${collection}` + filters;
-    console.log(url);
     try {
       const response = await fetch(url, {
         headers: {
@@ -21,6 +20,8 @@ export const useStrapiData = () => {
         attributes: attributes,
       };
     } catch (err) {
+      console.log(url);
+      console.log(data);
       console.log(err);
     }
   };
@@ -42,6 +43,7 @@ export const useStrapiData = () => {
         menu: menu,
       };
     } catch (err) {
+      console.log("menu data", data);
       console.log(err);
     }
   };

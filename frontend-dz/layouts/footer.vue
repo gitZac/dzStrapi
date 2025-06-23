@@ -12,7 +12,7 @@ const menuData = ref(null);
 
 onMounted(async () => {
   try {
-    const { menu } = await strapi.getMenu("1");
+    const { menu } = await strapi.getMenu("2");
     menuData.value = menu;
   } catch (err) {
     menu.value = {
